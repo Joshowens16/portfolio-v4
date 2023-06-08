@@ -5,7 +5,7 @@ export default function Home() {
   useEffect(() => {
     anime({
       targets: "#animated",
-      translateY: -400,
+      translateY: -(window.innerHeight / 2),
       duration: 2000,
     });
     anime({
@@ -17,24 +17,29 @@ export default function Home() {
     });
   }, []);
   return (
-    <div className="w-screen h-screen grid">
-      <div id="animated" className="flex justify-self-center flex-col self-end">
+    <div className="w-screen h-screen grid bg-gray-700 font-display">
+      <div
+        id="animated"
+        className="flex justify-center content-center flex-wrap justify-self-center flex-col self-end text-white"
+      >
         <span
           id="line"
-          className="border-2 border-black h-[1px] w-0 bg-black mb-4"
+          className="border-2 border-white h-[1px] w-0 bg-white mb-4"
         >
           {" "}
         </span>
         <h1
           id="name"
-          className="flex justify-center content-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+          className="flex justify-self-center self-center mb-4 text-4xl font-bold leading-none tracking-wide md:text-5xl lg:text-6xl dark:text-white"
         >
           Josh Owens
         </h1>
-        <p>I am a full stack software engineer from California</p>
+        <p className="flex justify-center content-center tracking-wide">
+          Full stack software engineer from California.
+        </p>
         <span
           id="line"
-          className="flex justify-self-end self-end border-2 border-black h-[1px] w-0 bg-black mt-4"
+          className="flex justify-self-end self-end border-2 border-white h-[1px] w-0 bg-white mt-4"
         >
           {" "}
         </span>
