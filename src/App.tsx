@@ -6,7 +6,7 @@ function App() {
   return (
     <div id="app" className="w-screen h-screen overflow-x-hidden">
       <ParticleBG />
-      <div className="relative z-10">
+      <div className="relative z-10 w-screen overflow-x-hidden">
         <Home />
         <AnotherC />
       </div>

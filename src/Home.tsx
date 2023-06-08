@@ -15,9 +15,19 @@ export default function Home() {
       delay: 200,
       duration: 1000,
     });
+    anime({
+      targets: "#background",
+      backgroundColor: "rgba(0, 0, 0, 0)",
+      easing: "linear",
+      delay: 1000,
+      duration: 1000,
+    });
   }, []);
   return (
-    <div className="w-screen h-screen grid bg-transparent font-display">
+    <div
+      id="background"
+      className="w-screen h-screen grid bg-[rgb(52,54,65)] font-display"
+    >
       <div
         id="animated"
         className="flex justify-center content-center flex-wrap justify-self-center flex-col self-end text-white"
