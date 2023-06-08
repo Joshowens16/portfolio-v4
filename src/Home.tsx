@@ -1,7 +1,21 @@
 import anime from "animejs/lib/anime.es.js";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export default function Home() {
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowHeight(window.innerHeight);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     anime({
       targets: "#animated",
@@ -19,10 +33,10 @@ export default function Home() {
       targets: "#background",
       backgroundColor: "rgba(0, 0, 0, 0)",
       easing: "linear",
-      delay: 1000,
+      delay: 1500,
       duration: 1000,
     });
-  }, []);
+  }, [windowHeight]);
   return (
     <div
       id="background"
@@ -32,10 +46,7 @@ export default function Home() {
         id="animated"
         className="flex justify-center content-center flex-wrap justify-self-center flex-col self-end text-white"
       >
-        <span
-          id="line"
-          className="border-2 border-white h-[1px] w-0 bg-white mb-4"
-        >
+        <span id="line" className="h-[1px] w-0 bg-white mb-4">
           {" "}
         </span>
         <h1
@@ -44,12 +55,12 @@ export default function Home() {
         >
           Josh Owens
         </h1>
-        <p className="flex justify-center content-center tracking-wide">
+        <p className="flex justify-center content-center tracking-wide sm:text-sm text-md md:text-l lg:text-xl">
           Full stack software engineer from California.
         </p>
         <span
           id="line"
-          className="flex justify-self-end self-end border-2 border-white h-[1px] w-0 bg-white mt-4"
+          className="flex justify-self-end self-end h-[1px] w-0 bg-white mt-4"
         >
           {" "}
         </span>
