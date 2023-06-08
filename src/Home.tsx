@@ -17,7 +17,7 @@ export default function Home() {
     });
   }, []);
   return (
-    <div className="w-screen h-screen grid bg-gray-700 font-display">
+    <div className="w-screen h-screen grid bg-transparent font-display">
       <div
         id="animated"
         className="flex justify-center content-center flex-wrap justify-self-center flex-col self-end text-white"
